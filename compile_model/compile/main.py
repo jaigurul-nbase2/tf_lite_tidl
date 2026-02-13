@@ -62,8 +62,9 @@ interpreter = tflite.Interpreter(
                         "tensor_bits": 16,
                         "accuracy_level": 1,
                         "debug_level": 3,
-                        "advanced_options:calibration_frames" : len(calib_audios),
-                        "advanced_options:calibration_iterations": 3,
+                        'advanced_options:calibration_frames': len(calib_audios),
+                        'advanced_options:calibration_iterations': len(calib_audios),
+                        'advanced_options:quantization_scale_type': 0,  # 0=dynamic, 3=power-of-2
                         "advanced_options:add_data_convert_ops": 1,
                     },
                 )
