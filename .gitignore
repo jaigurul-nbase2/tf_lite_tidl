@@ -1,0 +1,9 @@
+/compile_model/venv
+/compile_model/compile/.vscode
+/compile_model/compile/model_artifacts
+/compile_model/compile/tidl_tools
+/compile_model/compile/model
+/compile_model/edgeai-tidl-tools
+/model_development/.venv
+/model_development/free-spoken-digit-dataset-master
+/model_development/model.tflite
