@@ -29,9 +29,9 @@ def gen_param_yaml():
         "task_type": "classification",
         "preprocess": {
             "data_layout": "NCHW",
-            "mean": [123.675, 116.28, 103.53],
-            "scale": [0.0171, 0.0175, 0.0174],
-        },
+            "mean": [-588.29, 118.85, -1.06, -14.59, 19.88, 9.52, -16.12, -7.04, 3.98, -7.98, -11.13, 1.27, 0.19, -9.30, -4.39, 2.62, -3.17, -5.90, 0.86, 0.74],
+            "scale": [184.92, 127.04, 21.15, 25.97, 27.63, 17.49, 21.74, 12.24, 10.61, 12.57, 14.19, 8.00, 7.22, 13.28, 7.63, 6.28, 6.13, 8.81, 5.24, 4.65],
+         },
         "session": {
             "session_name": "tflite",
             "model_path": model_path,
@@ -59,7 +59,7 @@ interpreter = tflite.Interpreter(
                     {
                         "tidl_tools_path": tidl_tools_path,
                         "artifacts_folder": artifacts_folder,
-                        "tensor_bits": 16,
+                        "tensor_bits": 8,
                         "accuracy_level": 1,
                         "debug_level": 3,
                         'advanced_options:calibration_frames': len(calib_audios),

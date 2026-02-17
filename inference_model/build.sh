@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-aarch64-linux-gnu-g++ infer_model.cpp -o infer_dsp \
+aarch64-linux-gnu-g++ infer_model.cpp -o infer_cpu \
   --sysroot=/home/nbase2/Downloads/am62a-rootfs \
   -I/home/nbase2/edgeai/am62a/include/tensorflow \
   -I/home/nbase2/edgeai/am62a/include/tensorflow/tensorflow/lite \
