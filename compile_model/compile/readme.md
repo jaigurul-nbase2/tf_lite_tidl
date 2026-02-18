@@ -28,3 +28,11 @@ outputs the output tensor
 
 ### GENERATE PARAMS.YAML
 
+# Model compilation to generate the artifacts that can be loaded to the DSP of target
+
+Here the input is .tflite model which is compiled to the artifacts which finally should have the following 3 files in the artifacts folder
+
+- *io.bin
+- *net.bin
+- AllowedNodes.txt
+
