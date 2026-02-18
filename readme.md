@@ -10,7 +10,9 @@ cd tf_lite_tidl
 ```
 
 2. For model development move to the model_development directory
-```bash cd model_development```
+```bash cd model_development
+```
 
 3. For compilation of the developed model move to compile_model/compile directory
 ```bash cd compile_model/compile
+```
