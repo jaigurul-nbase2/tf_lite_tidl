@@ -41,4 +41,4 @@ python main.py
 
 ### 4. The model will be trained and saved as model/model.tflite
 
-
+Now this tflite model can be used for the compilation and runned on the target.
