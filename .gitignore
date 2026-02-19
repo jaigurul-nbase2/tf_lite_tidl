@@ -7,3 +7,4 @@
 /model_development/.venv
 /model_development/free-spoken-digit-dataset-master
 /model_development/model.tflite
+/model_development/model/*

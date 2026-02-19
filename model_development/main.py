@@ -9,6 +9,7 @@ import tensorflow as tf
 import warnings
 warnings.filterwarnings("ignore")   
 
+# get the audio files
 def get_files(audio_dir):
     print(f"{'*'*60}\nGetting all the audio files for the dataset creation\n")
 
@@ -21,6 +22,7 @@ def get_files(audio_dir):
         print(f"Got {len(files)} from the folder {audio_dir}\n")
         return files
 
+# extract mfcc and label from the file and save it in dataset as list
 def make_dataset(files, sample_rate, trim = True):
     print(f"{'*'*60}\nProcessing the audio files and extracting MFCC\n")
     dataset = []
@@ -37,11 +39,12 @@ def make_dataset(files, sample_rate, trim = True):
     print("Processed and extracted MFCC.")
     return dataset
 
+# export the model to tflite
 def export_tflite(model_tf):
     converter = tf.lite.TFLiteConverter.from_keras_model(model_tf)
     tflite_model = converter.convert()
     
-    with open('model.tflite', 'wb') as f:
+    with open('./model/model.tflite', 'wb') as f:
         f.write(tflite_model)
     print(f"{'*'*60}\nSaved the model as model.tflite\n{'*'*60}") 
 
@@ -60,7 +63,7 @@ if __name__ == "__main__":
 
 
     x_train,x_test,y_train,y_test = train_test_split(x, y, test_size=0.2, stratify=y, shuffle=True, random_state=42)
-    print(x_train.shape, x_test.shape, y_train.shape, y_test.shape)
+    print(f"{'*'*60}\nTrain X shape: {x_train.shape}\nTest X shape: {x_test.shape}\nTrain Y shape:  {y_train.shape}\nTest Y shape: {y_test.shape}\n{'*'*60}\n")
     
     model_tf = tf.keras.Sequential([
         tf.keras.layers.Input(shape=(1, 47, 20)),
