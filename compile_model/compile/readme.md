@@ -1,3 +1,45 @@
+# Compilation of the TfLite model to Artifacts
+
+## 1. Setup python3.10
+```bash
+# Check the current version
+python3 --version
+```
+
+If the version is not 3.10 then install python3.10
+```bash
+# Install python3.10
+sudo update
+sudo apt install python3.10
+```
+Create a virtual environment for the installation of the requirements
+```bash
+# Create venv
+python3.10 -m venv venv
+
+# Activate the venv
+source venv.bin.activate
+```
+
+## 2. Run the setup script to install required packages and tidl tools
+```bash
+# Give permission to execute
+chmod +x ./setup.sh
+./setup.sh
+```
+
+## 3. Run the compilation script with the exported model in the directory model/model.tflite
+```bash
+python3 main.py
+```
+
+
+
+
+
+
+
+
 ### MODEL CONFIGURATION NEEDS
 
  - task_type
